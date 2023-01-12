@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    height: 100%;
+	font-family: "OCR A Std", monospace;
+  }
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: black;
+}
+a
+{
+	position: relative;
+	background: white;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	letter-spacing: 0.1 em;
+	font-weight: 400;
+	padding: 10px 30px;
+	transition: 0.5s;
+}
+a:hover
+{
+	background: var(--clr);
+	letter-spacing: 0.25em;
+	box-shadow: 0 0 35px var(--clr);
+}
+#app {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#title {
+	position: absolute;
+	top: 70px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display: block;
+    color: white;	
+	font-size: 80px;
+}
+#exit {
+	color: white;
+    display: block;
+
+	font-size: 40px;
+    position: absolute;
+	top: 260px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+}
