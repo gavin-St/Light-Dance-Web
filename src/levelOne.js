@@ -1,23 +1,27 @@
-const webCamElement = document.getElementById("webCam");
-const canvasElement = document.getElementById("canvas");
-const webcam = new Webcam(webCamElement, "user", canvasElement);
-webcam.start();
+Webcam.set({
+  width: 320,
+  height: 240,
+  image_format: 'jpeg',
+  jpeg_quality: 90
+});
+Webcam.attach( '#webCam' );
+
+let button1 = document.getElementById('testSnap');
+button1.addEventListener("click", take_snapshot);
+function take_snapshot(){
+  console.log("FUCK MY LFIE"); 
+  Webcam.snap(function(data_uri){
+      document.getElementById('img').src = data_uri;        
+    })
+ }
 
 
-
-let imgElement = document.getElementById('imageSrc');
-let inputElement = document.getElementById('fileInput');
-inputElement.addEventListener('change', (e) => {
-  imgElement.src = URL.createObjectURL(e.target.files[0]);
-}, false);
-imgElement.onload = function() {
-  let mat = cv.imread(imgElement);
+function display_image_cv(){
+  //let imgElement = document.getElementById('imageSrc');
+  //imgElement.src = URL.createObjectURL("../images/test.png");
+  console.log("Wtf");
+  let mat = cv.imread('img');
   cv.imshow('canvasOutput', mat);
   mat.delete();
-};
-var Module = {
-  // https://emscripten.org/docs/api_reference/module.html#Module.onRuntimeInitialized
-  onRuntimeInitialized() {
-    document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
-  }
-};
+}
+

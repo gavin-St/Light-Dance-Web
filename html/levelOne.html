@@ -12,21 +12,24 @@
     <div>
       <div class="inputoutput">
         <img id="imageSrc" alt="No Image" />
-        <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
+        <div><button id="displayImage" onclick="display_image_cv()">display image</button></div>
       </div>
       <div class="inputoutput">
         <canvas id="canvasOutput" ></canvas>
         <div class="caption">canvasOutput</div>
+        <img hidden id="img" src="../images/test.png"/> 
       </div>
       <div id = "title">Press q to quit</div>
   </div>
   <div>
-    <video id="webCam" autoplay playsinline width="800" height="600"></video>
-    <canvas id="canvasVideo"></canvas>
-    <a download>SNAP</a>
+    <div id="webCam"></div>
+    <div id="results"></div>
+    <div class="snapButton"><button id="testSnap">Take snapshot</button></div>
+
   </div>
 
-  <script src = "https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+  <script src="https://docs.opencv.org/4.7.0/opencv.js"></script>
   <script src="../src/levelOne.js"></script>
 
   </body>
