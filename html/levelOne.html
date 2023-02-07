@@ -4,13 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Level Select</title>
+    <title>Level One</title>
     <link rel="stylesheet" href="../css/mainLevelSelect.css">
+    
   </head>
   <body style="background-color:black;">
-    <canvas id="app"></canvas>
-    <script type="module" src="src/levelOne.js"></script>
-    <div id = "title">Press q to quit</div>
+    <div>
+      <div class="inputoutput">
+        <img id="imageSrc" alt="No Image" />
+        <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
+      </div>
+      <div class="inputoutput">
+        <canvas id="canvasOutput" ></canvas>
+        <div class="caption">canvasOutput</div>
+      </div>
+      <div id = "title">Press q to quit</div>
+  </div>
+  <div>
+    <video id="webCam" autoplay playsinline width="800" height="600"></video>
+    <canvas id="canvasVideo"></canvas>
+    <a download>SNAP</a>
+  </div>
+
+  <script src = "https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+  <script src="../src/levelOne.js"></script>
 
   </body>
 </html>

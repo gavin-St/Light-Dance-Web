@@ -43,7 +43,7 @@ function makeCube(x = 0, y = 0, z = 0, rotation = 0) {
 }
 
 function moveAllCubes() {
-    //console.log(activeCubes);
+    //console.log(act 
     for (let i = 0; i < numCubes; i++) {
         activeCubes[i].position.z += 0.1
     }
