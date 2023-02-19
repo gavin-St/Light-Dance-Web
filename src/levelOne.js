@@ -19,8 +19,9 @@ function take_snapshot(){
 function display_image_cv(){
   //let imgElement = document.getElementById('imageSrc');
   //imgElement.src = URL.createObjectURL("../images/test.png");
-  console.log("Wtf");
+  //console.log("Wtf");
   let mat = cv.imread('img');
+  mat = cv.cvtColor(mat, mat, cv.COLOR_BGR2GRAY);
   cv.imshow('canvasOutput', mat);
   mat.delete();
 }
